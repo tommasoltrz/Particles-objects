@@ -8,7 +8,7 @@ var pointCloud;
 var targetPos;
 var modelLoaded = false;
 var modelURLBase = "models/";
-var modelNames = ["owl.obj", "hand.obj", "human.obj"];
+var modelNames = ["owl.obj", "hand.obj", "human.obj", "hand2.obj"];
 var lastModelID;
 
 init();
