@@ -24,12 +24,14 @@ function init() {
     // scene.background = new THREE.Color( 0xFFFFFF );
 
     width = window.innerWidth;
-    height = window.innerHeight ;
+    height = window.innerHeight;
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
     // camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 1, 1000);
 
 
-    renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer = new THREE.WebGLRenderer({
+        alpha: true
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
@@ -63,8 +65,8 @@ function setupParticles() {
         var theta = THREE.Math.randFloatSpread(360);
         var phi = THREE.Math.randFloatSpread(360);
 
-        x = distance * Math.sin(theta) * Math.cos(phi) ;
-        y = distance * Math.sin(theta) * Math.sin(phi)+100;
+        x = distance * Math.sin(theta) * Math.cos(phi);
+        y = distance * Math.sin(theta) * Math.sin(phi) + 100;
         z = distance * Math.cos(theta);
         pGeometry.vertices.push(new THREE.Vector3(x, y, z));
         targetGeometry.vertices.push(new THREE.Vector3(x, y, z));
@@ -130,13 +132,13 @@ function loadModels() {
             var pCounter = NUMPARTICLES - tempGeometry.vertices.length;
             while (pCounter--) {
 
-            var distance = (Math.random() * 60) - 100;
-            var theta = THREE.Math.randFloatSpread(360);
-            var phi = THREE.Math.randFloatSpread(360);
+                var distance = (Math.random() * 60) - 100;
+                var theta = THREE.Math.randFloatSpread(360);
+                var phi = THREE.Math.randFloatSpread(360);
 
-            x = distance * Math.sin(theta) * Math.cos(phi) ;
-            y = distance * Math.sin(theta) * Math.sin(phi) +100;
-            z = distance * Math.cos(theta);
+                x = distance * Math.sin(theta) * Math.cos(phi);
+                y = distance * Math.sin(theta) * Math.sin(phi) + 100;
+                z = distance * Math.cos(theta);
 
                 tempGeometry.vertices.push(new THREE.Vector3(x, y, z));
             }
