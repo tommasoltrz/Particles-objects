@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>Particles</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        canvas {
+            width: 100px;
+            height: 100px
+        }
+    </style>
+</head>
+
+<body>
+    <script src="js/three.js"></script>
+    <script src="js/loaders/OBJLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+
+    <script src="js/particles.js"></script>
+
+    <script>
+        function addStats() {
+            var script = document.createElement('script');
+            script.onload = function() {
+                var stats = new Stats();
+                document.body.appendChild(stats.dom);
+                requestAnimationFrame(function loop() {
+                    stats.update();
+                    requestAnimationFrame(loop)
+                });
+            };
+            script.src = 'js/statsmin.js';
+            document.head.appendChild(script);
+        }
+        addStats();
+    </script>
+</body>
+
+</html>
